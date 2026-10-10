@@ -1,0 +1,199 @@
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-12);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+}
+
+/* ─── Left Column (FAQ List) ─── */
+.faqColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  background-color: #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #111;
+}
+
+.faqHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.question {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 24px;
+  pointer-events: none;
+}
+
+.icon {
+  font-size: 24px;
+  font-weight: 400;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Accordion Animation */
+.faqBodyWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.open .faqBodyWrapper {
+  grid-template-rows: 1fr;
+}
+
+.faqBodyInner {
+  overflow: hidden;
+}
+
+.answer {
+  padding: 0 24px 24px 24px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* ─── Right Column (Contact Card) ─── */
+.contactColumn {
+  display: flex;
+  flex-direction: column;
+  /* Push it down slightly to align with the accordion list instead of the title */
+  padding-top: 110px;
+}
+
+.contactCard {
+  background-color: #e5e5e5;
+  border-radius: 8px;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #111;
+}
+
+.chatIcon {
+  margin-bottom: 24px;
+}
+
+.contactTitle {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.contactText {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 32px 0;
+}
+
+.contactButton {
+  display: inline-block;
+  width: 100%;
+  background-color: #f4d35e;
+  color: #111;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 16px 24px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.contactButton:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 0 var(--space-6);
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contactColumn {
+    padding-top: 0;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .question {
+    font-size: 15px;
+  }
+
+  .answer {
+    font-size: 14px;
+  }
+
+  .faqHeader {
+    padding: 16px 20px;
+  }
+
+  .contactCard {
+    padding: 32px 20px;
+  }
+
+  .contactTitle {
+    font-size: 18px;
+  }
+}

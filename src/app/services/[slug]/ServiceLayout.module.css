@@ -1,0 +1,252 @@
+/* ══════════════════════════════════════
+   Service Page Header / Layout
+   ══════════════════════════════════════ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: 68px;
+  background-color: rgba(37, 36, 32, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  gap: 32px;
+}
+
+/* ── Logo ── */
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.logo:hover { opacity: 0.6; }
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  flex: 1;
+  min-width: 0;
+}
+
+.breadcrumbParent {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.breadcrumbParent:hover { opacity: 1; }
+
+.sep {
+  opacity: 0.3;
+  flex-shrink: 0;
+}
+
+.breadcrumbCurrent {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Desktop Nav ── */
+.desktopNav {
+  display: block;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.navLink:hover { opacity: 1; }
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.langBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.langBtn:hover { background-color: rgba(255, 255, 255, 0.14); }
+
+.ctaBtn {
+  padding: 8px 18px;
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+.ctaBtn:hover { opacity: 0.85; }
+
+/* ── Hamburger Button ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.hamburger:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background-color: var(--color-text-primary);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.hamburgerOpen span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.hamburgerOpen span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── Mobile Overlay Menu ── */
+.mobileOverlay {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 190;
+  background-color: #1a1916;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 32px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.mobileOverlayOpen {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileNavList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 40px;
+}
+
+.mobileNavLink {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  letter-spacing: -0.01em;
+}
+
+.mobileNavLink:hover {
+  opacity: 1;
+}
+
+.mobileCtaBtn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 14px 28px;
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+.mobileCtaBtn:hover { opacity: 0.85; }
+
+/* ── Backdrop ── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .desktopNav { display: none; }
+  .breadcrumb { display: none; }
+  .ctaBtnDesktop { display: none; }
+  .hamburger { display: flex; }
+  .inner { padding: 0 24px; gap: 16px; }
+}

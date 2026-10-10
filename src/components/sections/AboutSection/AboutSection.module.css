@@ -1,0 +1,129 @@
+.aboutSection {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ─── Logo Marquee ─── */
+.logoMarquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  /* Fondu sur les côtés */
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  /* La durée doit être plus longue car la bande fait 10 sets de long */
+  animation: marquee 150s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.logoItem {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  /* On utilise le padding au lieu du flex gap pour que le calcul de 50% soit parfait mathématiquement */
+  padding-right: 250px;
+}
+
+.logo {
+  object-fit: contain;
+  height: 64px;
+  width: auto;
+  /* Noir & blanc comme sur la maquette */
+  filter: grayscale(100%) brightness(3) opacity(0.45);
+  transition: filter 0.3s ease;
+}
+
+.logo:hover {
+  filter: grayscale(0%) brightness(1) opacity(1);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ─── Contenu Central ─── */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 44px;
+  padding: 80px 24px 0;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+  letter-spacing: 0em;
+  max-width: 540px;
+}
+
+.btnIcon {
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  .aboutSection {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .content {
+    padding: 120px 24px 0;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 120px 20px 0;
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .logo {
+    height: 48px;
+  }
+
+  .logoItem {
+    padding-right: 140px;
+  }
+}

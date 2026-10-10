@@ -1,0 +1,99 @@
+.typewriterWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  /* Fond bleu iOS sélection */
+  background-color: rgba(10, 132, 255, 0.25);
+  padding: 0 4px;
+  width: fit-content;
+}
+
+.typewriterText {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+
+  /* Typewriter specific styles */
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 4;
+
+  /* Animation: typing */
+  animation: typing 1s steps(50, end) forwards;
+}
+
+.typewriterText strong {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ─── Keyframes ─── */
+@keyframes typing {
+  from {
+    max-width: 0;
+  }
+
+  to {
+    max-width: 100%;
+  }
+}
+
+/* ─── Knobs (I I) ─── */
+.knob {
+  position: absolute;
+  width: 2px;
+  height: calc(100% + 4px);
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0a84ff;
+  /* Le knob droit apparait avec l'animation typing car il est collé à droite ? 
+     Non, la width du wrapper évolue si inline-flex. */
+}
+
+.knobLeft {
+  left: -2px;
+  justify-content: flex-start;
+}
+
+.knobRight {
+  right: -2px;
+  justify-content: flex-end;
+  /* Optionnel: animation pour clignoter à la fin si tu veux garder le blink */
+}
+
+/* Le trait vertical */
+.knobLine {
+  width: 2px;
+  flex-grow: 1;
+  background-color: #0a84ff;
+}
+
+/* La petite boule */
+.knobDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #0a84ff;
+  flex-shrink: 0;
+}
+
+/* Positionnement fin des boules (gauche en haut, droite en bas) */
+.knobLeft .knobDot {
+  transform: translateY(-2px);
+}
+
+.knobRight .knobDot {
+  transform: translateY(2px);
+}
+
+@media (max-width: 480px) {
+  .typewriterText {
+    white-space: normal;
+    animation: none;
+    max-width: 100%;
+  }
+}

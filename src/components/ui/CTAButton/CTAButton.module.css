@@ -1,0 +1,73 @@
+.cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+
+  /* Gold background */
+  background-color: var(--color-accent-gold);
+  color: #252420;
+
+  /* Typography */
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+
+  /* Transitions */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  background-color: #facd2b;
+  box-shadow: 0 8px 32px rgba(45, 45, 45, 0.916);
+}
+
+.cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+/* ─── Spinning icon ─── */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* Slow idle rotation */
+  animation: spin 6s linear infinite;
+  transition: animation-duration 0.3s;
+}
+
+.cta:hover .icon {
+  /* Speed up on hover */
+  animation-duration: 1.5s;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── Text label ─── */
+.label {
+  position: relative;
+  z-index: 1;
+}

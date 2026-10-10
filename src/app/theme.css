@@ -1,0 +1,52 @@
+/* ═══════════════════════════════════════════════════
+   DESIGN TOKENS — Colors, Typography, Spacing
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  /* ─── Color Palette ─── */
+  --color-bg:           #252420;
+  --color-surface:      #3a3935;
+  --color-surface-alt:  #484743;
+  
+  --color-text-primary: #fffcf2;
+  --color-text-muted:   #e4e4e4;
+  --color-white:        #ffffff;
+  
+  --color-accent-gold:  #f4d35e;
+  --color-accent-pink:  #e63978;
+
+  /* ─── Typography: Font Families ─── */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-sans:    'Roboto', system-ui, sans-serif;
+  --font-ui:      'Poppins', 'Segoe UI', system-ui, sans-serif;
+
+  /* ─── Typography: Scale (from Figma) ─── */
+  --text-xs:    12px;
+  --text-sm:    14px;
+  --text-base:  16px;
+  --text-md:    17px;  /* Nav links */
+  --text-lg:    20px;  /* Badge */
+  --text-xl:    24px;  /* Logo */
+  --text-2xl:   28px;  /* "My name is" */
+  --text-hero:  152px; /* Huge Display Name */
+
+  /* ─── Layout & Spacing ─── */
+  --nav-height: 80px;
+  --max-width:  1300px;
+  
+  --space-2:    8px;
+  --space-4:    16px;
+  --space-6:    24px;
+  --space-8:    32px;
+  --space-12:   48px;
+  --space-16:   64px;
+  --space-32:   128px;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --nav-height: 68px;
+    --space-12:   20px;
+    --space-16:   48px;
+  }
+}

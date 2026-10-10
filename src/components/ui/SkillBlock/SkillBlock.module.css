@@ -1,0 +1,60 @@
+.skillWrapper {
+  display: flex;
+  gap: 12px;
+  height: 88px;
+  min-width: 0;
+}
+
+.titleBlock {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.iconBlock {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.iconBlock svg {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 480px) {
+  .skillWrapper {
+    height: 68px;
+    gap: 8px;
+  }
+
+  .titleBlock {
+    font-size: 20px;
+  }
+
+  .iconBlock {
+    width: 68px;
+    height: 68px;
+  }
+
+  .iconBlock svg {
+    width: 24px;
+    height: 24px;
+  }
+}

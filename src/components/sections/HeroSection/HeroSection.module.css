@@ -1,0 +1,238 @@
+/* ─────────────────────────────────────────────────────
+   HeroSection — Figma "Homepage" frame
+   bg: #252420 | 1300px wide | fixed height 544px on desktop
+   ───────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  /* Agrandi depuis 544px → var(--space-32)*5.3 ≈ 680px */
+  height: 680px;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  overflow: hidden;
+  /* Compense le header fixe via le token nav-height */
+  margin-top: var(--nav-height);
+  padding: 0 var(--space-12);
+}
+
+/* ────────────────────────────────────────
+   Container restrictif pour s'aligner exactement sur le texte
+   ──────────────────────────────────────── */
+.container {
+  position: relative;
+  width: max-content;
+  height: 100%;
+  margin: 0; /* Aligné à gauche, hérite du padding de .hero */
+  display: flex;
+  align-items: center; /* Centre le nameBlock verticalement */
+}
+
+/* ────────────────────────────────────────
+   Status tags — top-right, aligned with right edge
+   ──────────────────────────────────────── */
+.tagCluster {
+  position: absolute;
+  top: 160px; /* Ajusté pour être au-dessus du "DI" de MEHDI */
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.25s;
+}
+
+/* ────────────────────────────────────────
+   Name block — center-left
+   ──────────────────────────────────────── */
+.nameBlock {
+  /* En flux normal pour donner la largeur/hauteur au container */
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+/* ────────────────────────────────────────
+   Tagline block — bottom-left
+   ──────────────────────────────────────── */
+.taglineBlock {
+  position: absolute;
+  bottom: var(--nav-height);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.15s;
+}
+
+/* "My name is" — DM Serif Display Italic */
+.preTitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--text-2xl);
+  /* 28px */
+  color: var(--color-text-primary);
+  opacity: 0.88;
+  margin-bottom: 6px;
+}
+
+/* "BELKACEM MEHDI" — DM Serif Display, massive */
+.name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-hero);
+  /* 152px */
+  line-height: 0.9;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  /* Prevent wrapping to perfectly match Figma */
+  white-space: nowrap;
+
+
+
+  margin-bottom: var(--space-6);
+  /* 24px */
+}
+
+/* "Built to work…" — Roboto Regular */
+.tagline {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-base);
+  /* 16px */
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+}
+
+.tagline strong {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ────────────────────────────────────────
+   "Based in Algeria" — bottom-right
+   ──────────────────────────────────────── */
+.location {
+  position: absolute;
+  /* var(--nav-height) = 80px — aligné avec .copy */
+  bottom: var(--nav-height);
+  right: 0;
+
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  /* 14px */
+  color: var(--color-white);
+  white-space: nowrap;
+
+  animation: fadeUp 0.6s ease both;
+  animation-delay: 0.4s;
+}
+
+.location strong {
+  font-weight: 700;
+}
+
+/* ─── Keyframes ─── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1200px) {
+  .name {
+    font-size: 12vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    min-height: calc(100svh - 80px);
+    display: flex;
+    flex-direction: column;
+    padding: 60px 24px 48px;
+    gap: 28px;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tagCluster,
+  .nameBlock,
+  .taglineBlock,
+  .location {
+    position: static;
+    transform: none;
+  }
+
+  .tagCluster {
+    align-items: flex-start;
+    order: -1;
+  }
+
+  .nameBlock {
+    order: 0;
+  }
+
+  .taglineBlock {
+    order: 1;
+  }
+
+  .location {
+    align-self: flex-end;
+    order: 2;
+  }
+
+  .name {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 20px 40px;
+    gap: 28px;
+    min-height: auto;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .preTitle {
+    font-size: 18px;
+  }
+
+  .name {
+    font-size: 16vw;
+    line-height: 0.92;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .location {
+    font-size: 12px;
+  }
+}

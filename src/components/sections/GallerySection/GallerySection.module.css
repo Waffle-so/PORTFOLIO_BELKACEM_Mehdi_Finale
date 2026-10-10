@@ -1,0 +1,48 @@
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-12);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  /* Espace noir entre les photos */
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  /* J'ai mis 4/3 pour que ça ressemble à ta capture. 
+     Mets 1/1 si tu veux un carré parfait. */
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-surface);
+  /* Couleur de fond en attendant le chargement */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 0 var(--space-6);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

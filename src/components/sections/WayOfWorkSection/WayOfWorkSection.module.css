@@ -1,0 +1,199 @@
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-12);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ─── Graph Wrapper: outer centering container ─── */
+.graphWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ─── graphInner: SVG + grid share this exact reference box ─── */
+.graphInner {
+  position: relative;
+  width: fit-content;
+}
+
+/* ─── SVG overlay ─── */
+.arrowsSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* ─── CSS Grid for nodes ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  row-gap: 40px;
+  column-gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Each cell: the card + description + tags stacked vertically */
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Card (the rounded box with icon + text) ─── */
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  width: fit-content;
+  min-width: 180px;
+}
+
+.entryArrow {
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-40%);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cardIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.cardSubtitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+/* ─── Description under card ─── */
+.nodeDescription {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  opacity: 0.75;
+  margin: 0;
+  max-width: 240px;
+}
+
+/* ─── Tags ─── */
+.nodeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 0 var(--space-6);
+  }
+
+  .sectionTitle {
+    font-size: 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    row-gap: 32px;
+  }
+
+  .cell {
+    grid-column: 1 !important;
+    grid-row: unset !important;
+  }
+
+  .arrowsSvg {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 0 20px;
+  }
+
+  .sectionTitle {
+    font-size: 30px;
+  }
+
+  .card {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+  }
+
+  .nodeDescription {
+    font-size: 13px;
+  }
+}

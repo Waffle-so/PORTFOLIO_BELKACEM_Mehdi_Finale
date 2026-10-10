@@ -1,0 +1,22 @@
+.tag {
+  display: inline-block;
+  font-family: 'Roboto', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  border-radius: 4px;
+  padding: 14px 10px;
+  white-space: nowrap;
+}
+
+/* Gold — "Available for freelance projects" */
+.gold {
+  background-color: #f4d35e;
+  color: #252420;
+}
+
+/* Pink — "Independent Software Engineer" */
+.pink {
+  background-color: #e63978;
+  color: #ffffff;
+}
