@@ -11,7 +11,7 @@ import type { LucideProps } from 'lucide-react';
 
 // Dynamic icon renderer from lucide-react
 function Icon({ name, ...props }: { name: string } & LucideProps) {
-  const LucideIcon = (LucideIcons as Record<string, React.ComponentType<LucideProps>>)[name];
+  const LucideIcon = (LucideIcons as unknown as Record<string, React.ComponentType<LucideProps>>)[name];
   if (!LucideIcon) return null;
   return <LucideIcon {...props} />;
 }
