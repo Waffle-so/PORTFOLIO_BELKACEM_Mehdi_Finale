@@ -18,7 +18,7 @@ export default function AboutSection() {
     <section className={styles.aboutSection} id="about">
 
       {/* ── Bandeau défilant de logos ── */}
-      <div className={styles.logoMarquee} aria-label={t({ fr: 'Clients & partenaires', en: 'Clients & partners' })}>
+      <div className={styles.logoMarquee} aria-label={t({ fr: 'Expériences en entreprise (secteurs : banque, télécoms)', en: 'Company experience (sectors: banking, telecoms)' })}>
         <div className={styles.marqueeTrack}>
           {[...Array(10)].flatMap(() => LOGOS).map((logo, i) => (
             <div className={styles.logoItem} key={i}>

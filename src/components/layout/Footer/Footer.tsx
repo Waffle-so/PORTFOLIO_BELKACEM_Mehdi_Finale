@@ -25,13 +25,23 @@ export default function Footer() {
           <span className={styles.item}>
             {t({ fr: 'Conçu sur Figma', en: 'Designed in Figma' })}
           </span>
-          
-          <a href="#privacy" className={styles.link}>
-            {t({ fr: 'Politique de confidentialité', en: 'Privacy policy' })}
+
+          <a
+            href="/Belkacem_Mehdi_Resume_2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            {t({ fr: 'Curriculum Vitæ (PDF)', en: 'Resume (PDF)' })}
           </a>
-          
-          <a href="#terms" className={styles.link}>
-            {t({ fr: 'Conditions générales', en: 'Terms & conditions' })}
+
+          <a
+            href="https://www.linkedin.com/in/belkacem-mehdi-771233276/?isSelfProfile=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            LinkedIn
           </a>
           
           <span className={styles.item}>{currentYear}</span>

@@ -9,31 +9,31 @@ export default function ExperienceSection() {
 
   const stats = [
     {
-      title: t({ fr: '3 entreprises', en: '3 companies' }),
+      title: t({ fr: '4 projets livrés', en: '4 delivered projects' }),
       description: t({
-        fr: 'Systèmes réels en production conçus avant l’obtention de mon diplôme',
-        en: 'Real production systems built before graduation',
+        fr: 'Stages et missions en entreprise documentés : Algérie Télécom, Ooredoo et CNEP Banque',
+        en: 'Documented enterprise internships & projects: Algérie Télécom, Ooredoo, and CNEP Banque',
       }),
     },
     {
       title: t({ fr: '1 IA souveraine', en: '1 sovereign AI' }),
       description: t({
-        fr: 'Plateforme RAG privée déployée pour une banque nationale avec zéro fuite de données',
-        en: 'On-premise RAG platform deployed for a national bank & zero data leakage',
+        fr: 'Plateforme RAG privée pour banque nationale : serveur local, aucun appel API externe, accès contrôlé',
+        en: 'Private RAG platform for national bank: local server, zero external API calls, access controlled',
       }),
     },
     {
-      title: t({ fr: '+5 ans', en: '+5 years' }),
+      title: t({ fr: 'Bac+5 Ingénieur', en: 'MSc in Software Eng.' }),
       description: t({
-        fr: '4 ans de déploiements en entreprise réalisés en parallèle de mes 5 années d’études d’ingénierie',
-        en: '4 years of real enterprise deployments executed alongside 5 years of engineering studies',
+        fr: 'Formation d’ingénieur logiciel alliant rigueur théorique et réalisations concrètes sur le terrain',
+        en: 'Software engineering degree combining academic rigor with hands-on enterprise practice',
       }),
     },
     {
       title: t({ fr: 'Full stack', en: 'Full stack' }),
       description: t({
-        fr: 'Logiciel, design et IA — un interlocuteur unique, une vision claire',
-        en: 'Software, design and AI - one person, one vision',
+        fr: 'Design Figma, code front & back, déploiement — un interlocuteur unique et direct',
+        en: 'Figma design, front & back code, deployment — one single and direct contact',
       }),
     },
   ];

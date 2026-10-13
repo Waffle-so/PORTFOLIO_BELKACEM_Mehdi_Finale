@@ -22,30 +22,30 @@ export default function FaqSection() {
         en: 'Do you really handle both design AND development yourself?',
       }),
       answer: t({
-        fr: 'Oui, et c’est mon principal atout. Je prends en charge la stratégie de marque, le design UI/UX et l’ingénierie full-stack. Cela supprime les frictions habituelles et les retards de coordination entre agences. Le produit final fonctionne exactement comme il a été conçu — avec zéro intermédiaire.',
-        en: 'Yes, and that is my core advantage. I handle the brand strategy, the UI/UX design, and the full-stack engineering. This eliminates the usual friction and delays of coordinating between separate agencies. The final product works exactly as it was designed—with zero handoffs.',
+        fr: 'Oui, et c’est mon principal atout. Je prends en charge le design UI/UX sur Figma et l’ingénierie full-stack (Next.js, TypeScript). Cela supprime les frictions habituelles et les retards de coordination entre agences. Le produit final fonctionne exactement comme il a été conçu — avec zéro intermédiaire.',
+        en: 'Yes, and that is my core advantage. I handle UI/UX design on Figma and full-stack engineering (Next.js, TypeScript). This eliminates the usual friction and delays of coordinating between separate agencies. The final product works exactly as it was designed — with zero handoffs.',
       }),
     },
     {
       id: 'q2',
       question: t({
-        fr: 'Nos données confidentielles sont-elles en sécurité avec vos IA ?',
-        en: 'Is our confidential data safe with your AI systems?',
+        fr: 'Nos données confidentielles sont-elles en sécurité avec vos solutions IA ?',
+        en: 'Is our confidential data safe with your AI solutions?',
       }),
       answer: t({
-        fr: 'Absolument. Pour les études juridiques, écoles et clients exigeants, je déploie des systèmes "IA Souveraine" (RAG on-premise). Les modèles d’IA et bases de données fonctionnent entièrement sur vos serveurs privés. Vos données sensibles ne quittent jamais votre infrastructure et ne sont jamais envoyées vers des API publiques comme OpenAI.',
-        en: 'Absolutely. For law firms, schools, and demanding clients, I deploy "Sovereign AI" systems (On-premise RAG). The AI models and databases run entirely on your private servers. Your sensitive data never leaves your infrastructure and is never sent to public APIs like OpenAI.',
+        fr: 'Absolument. Pour les études juridiques, écoles et institutions, je déploie des systèmes RAG 100% on-premise. Les modèles et bases vectorielles tournent sur votre propre matériel local : aucun appel vers des API externes (ni OpenAI, ni Google), aucune fuite de données possible et des accès strictement contrôlés par utilisateur.',
+        en: 'Absolutely. For law firms, schools, and institutions, I deploy 100% on-premise RAG systems. The models and vector databases run on your own local hardware: zero calls to external APIs (neither OpenAI nor Google), zero data leaks, and access strictly controlled per user.',
       }),
     },
     {
       id: 'q3',
       question: t({
-        fr: 'Acceptez-vous de travailler en marque blanche (white-label) pour notre agence ?',
+        fr: 'Acceptez-vous de travailler en marque blanche pour notre agence ?',
         en: 'Do you accept working white-label for our agency?',
       }),
       answer: t({
-        fr: 'Oui, je m\'intègre régulièrement comme partenaire technique (Tech Partner) pour des agences digitales et créatives. Vous gérez la relation client, la stratégie et la direction artistique, et je m\'occupe de construire le produit final de manière invisible.',
-        en: 'Yes, I regularly integrate as a Tech Partner for digital and creative agencies. You manage the client relationship, strategy, and art direction, and I handle building the final product invisibly.',
+        fr: 'Oui, c’est une part importante de mon activité. Je signe un accord de confidentialité (NDA), je ne contacte jamais votre client final et je livre un code propre, documenté et prêt pour la production que vos équipes peuvent maintenir facilement.',
+        en: 'Yes, this is an important part of my work. I sign an NDA, never contact your end client, and deliver clean, documented, production-ready code that your team can easily maintain.',
       }),
     },
     {
@@ -55,8 +55,19 @@ export default function FaqSection() {
         en: 'How long does an average project take?',
       }),
       answer: t({
-        fr: 'Cela dépend du périmètre. Une identité de marque et un site e-commerce haute conversion prennent 3 à 6 semaines. Un MVP SaaS ou le déploiement d\'une architecture IA sur-mesure nécessitent 6 à 10 semaines. Nous fixons un calendrier strict avant le début des travaux.',
-        en: 'It depends on the scope. A brand identity and high-conversion e-commerce site take 3 to 6 weeks. A SaaS MVP or the deployment of a custom AI architecture requires 6 to 10 weeks. We set a strict timeline before any work begins.',
+        fr: 'Tout dépend du périmètre : l’ajout d’une fonctionnalité ciblée sur un site existant prend généralement 1 à 2 semaines (devis fixe et délai garanti). Une boutique e-commerce ou plateforme web sur-mesure demande 3 à 5 semaines. Une solution IA locale nécessite 3 à 6 semaines selon le volume de documents à indexer.',
+        en: 'It depends on the scope: adding a targeted feature to an existing website typically takes 1 to 2 weeks (fixed quote and guaranteed deadline). A custom e-commerce store or web platform takes 3 to 5 weeks. A local AI solution requires 3 to 6 weeks depending on document volume.',
+      }),
+    },
+    {
+      id: 'q5',
+      question: t({
+        fr: 'Êtes-vous disponible pour un recrutement en entreprise (CDD / CDI) ou uniquement en mission ?',
+        en: 'Are you available for company employment (Full-time / Contract) or only freelance?',
+      }),
+      answer: t({
+        fr: 'Je suis ouvert aux deux voies : des missions précises au forfait ou en marque blanche pour des agences et clients finaux, tout comme un recrutement en entreprise (CDD ou opportunité longue) pour rejoindre une équipe d’ingénierie ambitieuse à temps plein.',
+        en: 'I am open to both: fixed-scope freelance or white-label missions for agencies and clients, as well as company hiring (Contract or full-time roles) to join an ambitious engineering team.',
       }),
     },
   ];

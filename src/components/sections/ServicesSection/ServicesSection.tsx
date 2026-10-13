@@ -14,73 +14,37 @@ export default function ServicesSection() {
       id: 's1',
       number: '01',
       title: t({
-        fr: 'SaaS & Produits Digitaux',
-        en: 'SaaS & Digital Products',
+        fr: 'Produits Web Sur-Mesure',
+        en: 'Custom Web Products',
       }),
-      slug: 'saas-digital-products',
+      slug: 'produits-web',
       description: t({
-        fr: 'Sortez votre MVP rapidement, sans bugs et avec un rendu premium. Je gère le cycle complet (Design + Architecture + Code) pour vous éviter de perdre des mois à coordonner différents prestataires.',
-        en: 'Launch your MVP quickly, bug-free, and with a premium feel. I handle the entire lifecycle (Design + Architecture + Code) so you don\'t waste months coordinating multiple freelancers.',
+        fr: 'Du design au code, un seul interlocuteur. Je livre votre site, votre application ou votre boutique prêts pour la production — en marque blanche pour les agences, ou en direct pour les marques e-commerce.',
+        en: 'From design to code, one point of contact. I deliver your website, app or store production-ready — white-label for agencies, or direct for e-commerce brands.',
       }),
       tags: t({
-        fr: ['Next.js / React', 'Architecture Full-Stack', 'Docker', 'Déploiement Rapide', 'MVP'],
-        en: ['Next.js / React', 'Full-Stack Architecture', 'Docker', 'Fast Go-to-Market', 'MVP'],
+        fr: ['Next.js / React', 'Figma → Code', 'E-commerce', 'Marque Blanche', 'Mobile-First'],
+        en: ['Next.js / React', 'Figma → Code', 'E-commerce', 'White-Label', 'Mobile-First'],
       }),
-      imageSrc: '/Dashboard_cele.webp',
+      imageSrc: '/Jewelry_website2.webp',
     },
     {
       id: 's2',
       number: '02',
       title: t({
-        fr: "Souveraineté des Données & IA",
-        en: 'Data Sovereignty & AI',
+        fr: 'IA Privée & Documents',
+        en: 'Private AI & Documents',
       }),
-      slug: 'data-sovereignty-ai',
+      slug: 'ia-privee-documents',
       description: t({
-        fr: "Gagnez du temps sur la recherche dans vos archives sans violer la confidentialité. Je déploie des modèles LLM et systèmes RAG 100% On-Premise (sur vos serveurs) pour interroger vos documents sensibles en toute sécurité.",
-        en: 'Save time searching your archives without violating confidentiality. I deploy LLM models and RAG systems 100% On-Premise (on your servers) to query your sensitive documents securely.',
+        fr: "Un assistant IA qui connaît tous vos documents, installé sur votre serveur. Vos équipes trouvent n'importe quelle réponse en quelques secondes — en français ou en arabe — sans qu'aucune donnée ne sorte.",
+        en: 'An AI assistant that knows all your documents, installed on your server. Your team finds any answer in seconds — in French or Arabic — with zero data leaving your premises.',
       }),
       tags: t({
-        fr: ['LLMs Locaux', 'ChromaDB', 'RAG', '100% On-Premise', 'Sécurité'],
-        en: ['Local LLMs', 'ChromaDB', 'RAG', '100% On-Premise', 'Security'],
+        fr: ['LLM Local', 'RAG', '100% On-Premise', 'Français & Arabe', 'Sécurité'],
+        en: ['Local LLM', 'RAG', '100% On-Premise', 'French & Arabic', 'Security'],
       }),
       imageSrc: '/CNEP_Stage.webp',
-    },
-    {
-      id: 's3',
-      number: '03',
-      title: t({
-        fr: 'Partenaire Tech (Marque Blanche)',
-        en: 'Tech Partner (White-Label)',
-      }),
-      slug: 'tech-partner',
-      description: t({
-        fr: 'Dites "Oui" à tous les briefs techniques de vos clients sans recruter à l\'année. Je m\'intègre à votre agence comme un développeur senior invisible : vous faites la stratégie et le design, je construis le produit final.',
-        en: 'Say "Yes" to all your clients\' technical briefs without yearly hires. I integrate into your agency as an invisible senior developer: you handle strategy and design, I build the final product.',
-      }),
-      tags: t({
-        fr: ['Sous-traitance', 'White-Label', 'Collaboration Agence', 'Design to Code'],
-        en: ['Outsourcing', 'White-Label', 'Agency Collaboration', 'Design to Code'],
-      }),
-      imageSrc: '/Searchtube.webp',
-    },
-    {
-      id: 's4',
-      number: '04',
-      title: t({
-        fr: 'Branding Premium & E-Commerce',
-        en: 'Premium Branding & E-Commerce',
-      }),
-      slug: 'premium-branding-ecommerce',
-      description: t({
-        fr: 'Votre site et votre marque doivent refléter la véritable valeur (et le prix) de vos produits. Je conçois des identités visuelles fortes et des boutiques sur-mesure conçues spécifiquement pour maximiser vos taux de conversion.',
-        en: 'Your website and brand must reflect the true value (and price) of your products. I design strong visual identities and custom storefronts specifically engineered to maximize your conversion rates.',
-      }),
-      tags: t({
-        fr: ['Identité Visuelle', 'Figma', 'UI/UX Design', 'Shopify / Next.js', 'Conversion'],
-        en: ['Visual Identity', 'Figma', 'UI/UX Design', 'Shopify / Next.js', 'Conversion'],
-      }),
-      imageSrc: '/Jewelry_website2.webp',
     },
   ];
 
@@ -97,8 +61,8 @@ export default function ServicesSection() {
           <h2 className={styles.title}>Services</h2>
           <p className={styles.description}>
             {t({
-              fr: 'Ingénierie et design de bout en bout. J’aide les fondateurs et entreprises à concrétiser des idées complexes en logiciels évolutifs, systèmes intelligents et marques premium, avec zéro intermédiaire.',
-              en: 'End-to-end engineering and design. I help founders turn complex ideas into scalable software, intelligent systems, and premium brands with zero handoffs.',
+              fr: 'Du design au code, deux offres d’intervention directes et une formule de cadrage au forfait, sans intermédiaire.',
+              en: 'From design to code, two focused services and fixed-scope feature sprints, zero handoffs.',
             })}
           </p>
         </div>
@@ -113,6 +77,39 @@ export default function ServicesSection() {
               onToggle={() => toggleAccordion(service.id)}
             />
           ))}
+        </div>
+
+        {/* ── Encadré : Feature sur-mesure ── */}
+        <div className={styles.featureBox}>
+          <div className={styles.featureBoxInner}>
+            <div className={styles.featureBoxText}>
+              <p className={styles.featureBoxEyebrow}>
+                {t({ fr: 'Vous avez déjà un site ?', en: 'Already have a website?' })}
+              </p>
+              <h3 className={styles.featureBoxTitle}>
+                {t({ fr: 'Ajoutez la fonctionnalité qui vous manque', en: 'Add the feature you\'re missing' })}
+              </h3>
+              <p className={styles.featureBoxDesc}>
+                {t({
+                  fr: 'Cadrage gratuit de 20 min, puis devis fixe avec délai. Périmètre défini à l\'avance : nombre de retours inclus, hors-périmètre et délai clairement écrits.',
+                  en: 'Free 20-min scoping call, then a fixed quote with a deadline. Scope defined upfront: number of revisions, out-of-scope items, and deadline clearly written.',
+                })}
+              </p>
+              <div className={styles.featureExamples}>
+                {[
+                  t({ fr: 'Espace membre / auth', en: 'Member area / auth' }),
+                  t({ fr: 'Paiement en ligne', en: 'Online payment' }),
+                  t({ fr: 'Dashboard analytics', en: 'Analytics dashboard' }),
+                  t({ fr: 'Chatbot sur vos données', en: 'Chatbot on your data' }),
+                ].map((item, i) => (
+                  <span key={i} className={styles.featureTag}>{item}</span>
+                ))}
+              </div>
+            </div>
+            <a href="#contact" className={styles.featureBoxCta}>
+              {t({ fr: 'Demander un cadrage', en: 'Request a scoping call' })}
+            </a>
+          </div>
         </div>
 
       </div>

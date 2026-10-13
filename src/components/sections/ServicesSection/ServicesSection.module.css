@@ -44,6 +44,102 @@
   gap: 8px; /* Slight gap between accordion items */
 }
 
+/* ─── Encadré : Feature sur-mesure ─── */
+.featureBox {
+  margin-top: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 16px;
+  padding: 36px 40px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureBox:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.featureBoxInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.featureBoxText {
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+}
+
+.featureBoxEyebrow {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-gold, #c5a059);
+  margin: 0 0 8px;
+}
+
+.featureBoxTitle {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin: 0 0 12px;
+}
+
+.featureBoxDesc {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0 0 20px;
+}
+
+.featureExamples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.featureTag {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: #d8d8d8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 6px 14px;
+}
+
+.featureBoxCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: #121210;
+  background-color: var(--color-accent-gold, #c5a059);
+  padding: 14px 28px;
+  border-radius: 9999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(197, 160, 89, 0.2);
+  align-self: center;
+}
+
+.featureBoxCta:hover {
+  transform: translateY(-2px);
+  background-color: #d8b268;
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 0 var(--space-6);
@@ -55,6 +151,20 @@
   
   .container {
     gap: 40px;
+  }
+
+  .featureBox {
+    padding: 28px 24px;
+  }
+
+  .featureBoxInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .featureBoxCta {
+    align-self: flex-start;
   }
 }
 
@@ -73,5 +183,18 @@
 
   .container {
     gap: 28px;
+  }
+
+  .featureBox {
+    padding: 24px 18px;
+  }
+
+  .featureBoxTitle {
+    font-size: 22px;
+  }
+
+  .featureBoxCta {
+    width: 100%;
+    text-align: center;
   }
 }

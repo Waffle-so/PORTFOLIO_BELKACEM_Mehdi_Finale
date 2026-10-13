@@ -21,279 +21,141 @@ export interface ServiceDetail {
 
 export const servicesDetails: Record<string, ServiceDetail> = {
 
-  /* ─── 01 SaaS & Produits Digitaux ─────────────────────────────── */
-  'saas-digital-products': {
-    slug: 'saas-digital-products',
+  /* ─── 01 Produits Web Sur-Mesure ─────────────────────────────── */
+  'produits-web': {
+    slug: 'produits-web',
     badge: { fr: 'Service 01', en: 'Service 01' },
     heroTitle: {
-      fr: 'SaaS & Produits Digitaux',
-      en: 'SaaS & Digital Products',
+      fr: 'Produits Web Sur-Mesure',
+      en: 'Custom Web Products',
     },
     heroTagline: {
-      fr: 'Votre MVP en production — vite, solide, sans coordination inutile.',
-      en: 'Your MVP in production — fast, solid, no wasted coordination.',
+      fr: 'Du design au code, un seul interlocuteur livre votre site, votre application ou votre boutique, prêts pour la production.',
+      en: 'From design to code, one person delivers your website, app or store — production-ready.',
     },
     persona: {
-      fr: 'Pour les fondateurs & startups',
-      en: 'For founders & startups',
+      fr: 'Pour les agences (sous-traitance marque blanche) · les marques e-commerce (bijoux, cosmétique, mode, artisanat)',
+      en: 'For agencies (white-label outsourcing) · e-commerce brands (jewelry, cosmetics, fashion, crafts)',
     },
     benefits: [
       {
         iconName: 'Rocket',
         title: { fr: 'Un seul interlocuteur du design au déploiement', en: 'One person from design to deployment' },
         description: {
-          fr: 'Fini les allers-retours entre designer, développeur et chef de projet. Je pilote tout le cycle : maquette, code, mise en ligne.',
-          en: 'No more back-and-forth between designer, dev, and PM. I own the full cycle: wireframe, code, launch.',
-        },
-      },
-      {
-        iconName: 'Zap',
-        title: { fr: 'Time-to-market 3× plus rapide', en: '3× faster time-to-market' },
-        description: {
-          fr: 'Une architecture choisie pour votre périmètre réel, pas sur-ingéniée. Vous êtes en ligne en quelques semaines, pas en mois.',
-          en: 'Architecture chosen for your real scope, not over-engineered. Live in weeks, not months.',
-        },
-      },
-      {
-        iconName: 'ShieldCheck',
-        title: { fr: 'Code maintenable dès le premier jour', en: 'Maintainable code from day one' },
-        description: {
-          fr: 'Stack moderne (Next.js, TypeScript, Docker) et conventions claires pour que votre futur développeur puisse reprendre sans friction.',
-          en: 'Modern stack (Next.js, TypeScript, Docker) and clean conventions so your next developer can take over without friction.',
-        },
-      },
-      {
-        iconName: 'LayoutDashboard',
-        title: { fr: 'Un design premium qui retient vos utilisateurs', en: 'Premium design that retains your users' },
-        description: {
-          fr: 'Je conçois l\'interface avant de coder. Votre produit doit paraître crédible dès le premier écran pour retenir vos utilisateurs.',
-          en: 'I design the interface before coding. Your product needs to look credible from the first screen to retain users.',
-        },
-      },
-      {
-        iconName: 'GitBranch',
-        title: { fr: 'Visibilité totale sur l\'avancement du projet', en: 'Full visibility on project progress' },
-        description: {
-          fr: 'Nous définissons un plan d\'action clair dès le départ. Vous suivez l\'avancement à chaque étape et restez toujours au courant de ce qui se passe.',
-          en: 'We define a clear action plan from the start. You track the progress at every step and always stay informed about what is happening.',
-        },
-      },
-      {
-        iconName: 'Headphones',
-        title: { fr: 'Support post-lancement inclus', en: 'Post-launch support included' },
-        description: {
-          fr: 'Je reste disponible après la mise en ligne pour corriger, ajuster ou faire évoluer le produit selon vos premiers retours.',
-          en: 'I stay available after launch to fix, adjust, or evolve the product based on your first user feedback.',
-        },
-      },
-    ],
-    ctaLabel: { fr: 'Discuter de votre MVP', en: 'Discuss your MVP' },
-  },
-
-  /* ─── 02 Souveraineté des Données & IA ────────────────────────── */
-  'data-sovereignty-ai': {
-    slug: 'data-sovereignty-ai',
-    badge: { fr: 'Service 02', en: 'Service 02' },
-    heroTitle: {
-      fr: 'Souveraineté des Données & IA',
-      en: 'Data Sovereignty & AI',
-    },
-    heroTagline: {
-      fr: 'L\'intelligence artificielle sur vos propres serveurs. Vos données ne bougent pas.',
-      en: 'Artificial intelligence on your own servers. Your data never moves.',
-    },
-    persona: {
-      fr: 'Pour les entreprises & institutions sensibles aux données',
-      en: 'For enterprises & data-sensitive institutions',
-    },
-    benefits: [
-      {
-        iconName: 'Lock',
-        title: { fr: 'Zéro donnée envoyée vers le cloud', en: 'Zero data sent to the cloud' },
-        description: {
-          fr: 'Vos documents, conversations et fichiers ne quittent jamais vos serveurs. Ni OpenAI, ni Google, ni personne d\'autre ne les voit.',
-          en: 'Your documents, conversations, and files never leave your servers. Not OpenAI, not Google, no one else sees them.',
-        },
-      },
-      {
-        iconName: 'Search',
-        title: { fr: 'Trouvez n\'importe quelle information en secondes', en: 'Find any information in seconds' },
-        description: {
-          fr: 'Vos employés posent une question en langage naturel et le système retrouve la réponse dans vos archives internes instantanément.',
-          en: 'Your employees ask a question in natural language and the system finds the answer in your internal archives instantly.',
-        },
-      },
-      {
-        iconName: 'Server',
-        title: { fr: 'Infrastructure performante requise', en: 'High-performance infrastructure required' },
-        description: {
-          fr: 'Ce service exclusif nécessite que vous disposiez déjà de serveurs (on-premise ou cloud privé) capables de supporter la charge d\'une IA en production.',
-          en: 'This exclusive service requires you to already have servers (on-premise or private cloud) capable of supporting an AI model in production.',
-        },
-      },
-      {
-        iconName: 'BrainCircuit',
-        title: { fr: 'Algorithme personnalisé sur-mesure', en: 'Custom tailored algorithm' },
-        description: {
-          fr: 'Le système n\'est pas générique. L\'algorithme est spécifiquement adapté à vos types de fichiers et intégré parfaitement à votre architecture interne.',
-          en: 'The system is not generic. The algorithm is specifically adapted to your file types and integrated seamlessly into your internal architecture.',
-        },
-      },
-      {
-        iconName: 'TrendingUp',
-        title: { fr: 'Des heures de recherche économisées chaque semaine', en: 'Hours of research saved every week' },
-        description: {
-          fr: 'Ce que vos équipes cherchaient en 2 heures se trouve en 10 secondes. L\'IA travaille, vos collaborateurs décident.',
-          en: 'What your teams searched for in 2 hours is found in 10 seconds. AI works, your people decide.',
-        },
-      },
-      {
-        iconName: 'UserCheck',
-        title: { fr: 'Conforme aux exigences de confidentialité strictes', en: 'Compliant with strict confidentiality requirements' },
-        description: {
-          fr: 'Idéal pour les cabinets d\'expertise comptable, les centres médicaux, les bureaux d\'études, ou toute entreprise gérant des données sensibles et un volume documentaire massif.',
-          en: 'Ideal for accounting firms, medical centers, engineering firms, or any enterprise managing sensitive data and a massive document volume.',
-        },
-      },
-    ],
-    ctaLabel: { fr: 'Explorer une démo', en: 'Explore a demo' },
-  },
-
-  /* ─── 03 Partenaire Tech (Marque Blanche) ─────────────────────── */
-  'tech-partner': {
-    slug: 'tech-partner',
-    badge: { fr: 'Service 03', en: 'Service 03' },
-    heroTitle: {
-      fr: 'Sous-traitance Web & Partenaire Tech (Marque Blanche)',
-      en: 'Web Outsourcing & Tech Partner (White-Label)',
-    },
-    heroTagline: {
-      fr: 'Dites oui à chaque brief client. Je construis, vous livrez.',
-      en: 'Say yes to every client brief. I build, you deliver.',
-    },
-    persona: {
-      fr: 'Pour les agences digitales & créatives',
-      en: 'For digital & creative agencies',
-    },
-    benefits: [
-      {
-        iconName: 'Handshake',
-        title: { fr: 'Votre renfort technique : aucun projet refusé', en: 'Your tech reinforcement: no project refused' },
-        description: {
-          fr: 'Un brief arrive avec une stack que votre équipe ne maîtrise pas ? Je m\'intègre discrètement et vous livrez sans briser la confiance.',
-          en: 'A brief arrives with a stack your team doesn\'t master? I integrate discreetly and you deliver without breaking trust.',
+          fr: 'Fini les allers-retours entre designer, développeur et chef de projet. Je pilote tout le cycle : maquette Figma, code, mise en ligne.',
+          en: 'No more back-and-forth between designer, dev, and PM. I own the full cycle: Figma wireframe, code, launch.',
         },
       },
       {
         iconName: 'EyeOff',
-        title: { fr: 'Complètement invisible pour vos clients', en: 'Completely invisible to your clients' },
+        title: { fr: 'Marque blanche : invisible pour vos clients', en: 'White-label: invisible to your clients' },
         description: {
           fr: 'Je signe des NDA, je ne contacte jamais votre client directement, je ne mets pas mon nom sur le produit. Votre image reste intacte.',
           en: 'I sign NDAs, I never contact your client directly, I don\'t put my name on the product. Your image stays intact.',
         },
       },
       {
-        iconName: 'Target',
-        title: { fr: 'Externalisation flexible : vos marges préservées sans CDI', en: 'Flexible outsourcing: margins preserved without a tech hire' },
+        iconName: 'ShoppingBag',
+        title: { fr: 'Boutiques e-commerce conçues pour convertir', en: 'E-commerce stores built to convert' },
         description: {
-          fr: 'Pas de charges sociales, ni d\'onboarding. Vous payez une prestation (ex: création d\'un site vitrine, d\'un dashboard SaaS ou d\'une plateforme e-commerce) et vous récupérez le produit final.',
-          en: 'No payroll taxes or onboarding. You pay for a specific mission (e.g., corporate site, SaaS dashboard, e-commerce platform) and receive the final product.',
+          fr: 'Chaque page, chaque bouton est pensé pour guider le visiteur vers l\'achat. Gestion du paiement à la livraison, formulaires adaptés au marché algérien.',
+          en: 'Every page, every button is designed to guide visitors toward purchase. COD-ready, forms adapted to the Algerian market.',
         },
       },
       {
         iconName: 'Code2',
-        title: { fr: 'Intégration Figma to Code pixel perfect', en: 'Pixel-perfect Figma to Code integration' },
+        title: { fr: 'Intégration Figma → Code pixel perfect', en: 'Pixel-perfect Figma → Code integration' },
         description: {
-          fr: 'Vous fournissez les maquettes Figma, je les traduis en code exact. Le site final est optimisé pour les Web Vitals (vitesse de chargement) et parfaitement structuré pour le SEO technique.',
-          en: 'You provide the Figma designs, I translate them into exact code. The final site is optimized for Core Web Vitals (speed) and perfectly structured for technical SEO.',
+          fr: 'Vous fournissez les maquettes Figma, je les traduis en code exact. Le site final est optimisé pour les Web Vitals et parfaitement structuré pour le SEO.',
+          en: 'You provide Figma designs, I translate them into exact code. The final site is optimized for Core Web Vitals and technical SEO.',
         },
       },
       {
-        iconName: 'RefreshCw',
-        title: { fr: 'Collaboration agile sur plusieurs projets', en: 'Agile collaboration across multiple projects' },
+        iconName: 'Zap',
+        title: { fr: 'Time-to-market rapide, architecture solide', en: 'Fast time-to-market, solid architecture' },
         description: {
-          fr: 'Si vous avez un pic d\'activité avec plusieurs clients en même temps, je peux absorber la charge et gérer plusieurs développements en parallèle de manière organisée.',
-          en: 'If you have a spike in activity with multiple clients at once, I can absorb the load and manage several developments in parallel in an organized manner.',
+          fr: 'Stack moderne (Next.js, TypeScript, Docker). En ligne en quelques semaines, avec un code que votre prochain développeur peut reprendre sans friction.',
+          en: 'Modern stack (Next.js, TypeScript, Docker). Live in weeks, with code your next developer can take over without friction.',
         },
       },
       {
-        iconName: 'Award',
-        title: { fr: 'Qualité d\'ingénieur logiciel certifié', en: 'Certified software engineering quality' },
+        iconName: 'Headphones',
+        title: { fr: 'Support post-lancement inclus', en: 'Post-launch support included' },
         description: {
-          fr: 'Diplômé RNCP niveau 7 (CESI Exia) avec une solide expérience terrain. Le code livré respecte les standards de l\'ingénierie (architecture propre, tests, sécurité).',
-          en: 'RNCP Level 7 graduate (CESI Exia) with solid field experience. The delivered code respects engineering standards (clean architecture, tests, security).',
+          fr: 'Je reste disponible après la mise en ligne pour corriger, ajuster ou faire évoluer le produit selon vos premiers retours clients.',
+          en: 'I stay available after launch to fix, adjust, or evolve the product based on your first user feedback.',
         },
       },
     ],
-    ctaLabel: { fr: 'Devenir partenaire', en: 'Become a partner' },
+    ctaLabel: { fr: 'Discuter de votre projet', en: 'Discuss your project' },
   },
 
-  /* ─── 04 Branding Premium & E-Commerce ────────────────────────── */
-  'premium-branding-ecommerce': {
-    slug: 'premium-branding-ecommerce',
-    badge: { fr: 'Service 04', en: 'Service 04' },
+  /* ─── 02 IA Privée & Documents ────────────────────────────────── */
+  'ia-privee-documents': {
+    slug: 'ia-privee-documents',
+    badge: { fr: 'Service 02', en: 'Service 02' },
     heroTitle: {
-      fr: 'Branding Premium & E-Commerce',
-      en: 'Premium Branding & E-Commerce',
+      fr: 'IA Privée & Documents',
+      en: 'Private AI & Documents',
     },
     heroTagline: {
-      fr: 'Une marque à la hauteur de votre produit. Un site qui vend.',
-      en: 'A brand that matches your product. A website that sells.',
+      fr: 'Un assistant IA qui connaît tous vos documents, installé chez vous, sans qu\'aucune donnée ne sorte.',
+      en: 'An AI assistant that knows all your documents, installed on your servers — no data ever leaves.',
     },
     persona: {
-      fr: 'Pour les marques & entrepreneurs e-commerce',
-      en: 'For brands & e-commerce entrepreneurs',
+      fr: 'Pour les notaires & avocats · les écoles privées & centres de formation',
+      en: 'For notaries & lawyers · private schools & training centers',
     },
     benefits: [
       {
-        iconName: 'Star',
-        title: { fr: 'Une identité visuelle qui reflète votre ADN', en: 'A visual identity that reflects your DNA' },
+        iconName: 'Lock',
+        title: { fr: 'Aucune donnée envoyée vers le cloud', en: 'Zero data sent to the cloud' },
         description: {
-          fr: 'Le design ne doit pas juste être beau, il doit incarner l\'âme de votre produit. Je conçois des interfaces authentiques qui créent une connexion immédiate avec vos clients.',
-          en: 'Design shouldn\'t just be beautiful, it must embody the soul of your product. I design authentic interfaces that create an immediate connection with your customers.',
+          fr: 'Le modèle tourne sur votre serveur ou votre machine locale. Ni OpenAI, ni Google, ni aucun tiers ne voit vos documents.',
+          en: 'The model runs on your server or local machine. Neither OpenAI, Google, nor any third party sees your documents.',
         },
       },
       {
-        iconName: 'ShoppingBag',
-        title: { fr: 'Tunnel de vente conçu pour convertir', en: 'Sales funnel designed to convert' },
+        iconName: 'Search',
+        title: { fr: 'Recherche en langage naturel sur vos propres fichiers', en: 'Natural language search across your own files' },
         description: {
-          fr: 'Chaque page, chaque bouton, chaque micro-interaction est pensé pour guider le visiteur vers l\'achat, sans friction.',
-          en: 'Every page, every button, every micro-interaction is designed to guide the visitor toward purchase, without friction.',
+          fr: 'Vos équipes posent une question en français ou en arabe et le système retrouve la bonne réponse dans vos archives internes, avec la source citée.',
+          en: 'Your team asks a question in French or Arabic and the system finds the right answer in your internal archives, with the source cited.',
         },
       },
       {
-        iconName: 'Palette',
-        title: { fr: 'Une marque cohérente sur tous les supports', en: 'A consistent brand across all channels' },
+        iconName: 'Server',
+        title: { fr: 'Installé sur votre infrastructure existante', en: 'Installed on your existing infrastructure' },
         description: {
-          fr: 'Logo, couleurs, typographie, ton — tout est codifié dans un guide pour que votre marque reste reconnaissable partout.',
-          en: 'Logo, colors, typography, tone — everything is codified in a guide so your brand stays recognizable everywhere.',
+          fr: 'Pas de SaaS, pas d\'abonnement cloud. Le système tourne en local sur votre matériel, sans dépendance externe.',
+          en: 'No SaaS, no cloud subscription. The system runs locally on your hardware, with no external dependency.',
         },
       },
       {
-        iconName: 'Smartphone',
-        title: { fr: 'Mobile-first, parce que vos clients achètent sur mobile', en: 'Mobile-first, because your customers shop on mobile' },
+        iconName: 'BrainCircuit',
+        title: { fr: 'Pipeline RAG adapté à vos types de fichiers', en: 'RAG pipeline adapted to your file types' },
         description: {
-          fr: 'Plus de 60% des achats e-commerce se font sur téléphone. Votre boutique sera parfaite sur tous les écrans, en priorité sur mobile.',
-          en: 'Over 60% of e-commerce purchases happen on phones. Your store will be perfect on every screen, mobile first.',
+          fr: 'PDF, Word, Excel, actes notariés, cours, contrats — le pipeline est calibré sur vos documents réels pour maximiser la pertinence des réponses.',
+          en: 'PDF, Word, Excel, notarial deeds, courses, contracts — the pipeline is calibrated on your real documents to maximize answer relevance.',
         },
       },
       {
-        iconName: 'BarChart2',
-        title: { fr: 'Tableaux de bord (Dashboarding) précis', en: 'Precise Dashboarding' },
+        iconName: 'TrendingUp',
+        title: { fr: 'Des heures de recherche économisées chaque semaine', en: 'Hours of research saved every week' },
         description: {
-          fr: 'Ne naviguez pas à l\'aveugle. Je mets en place des dashboards clairs pour suivre vos visiteurs, vos paniers abandonnés et vos ventes en temps réel.',
-          en: 'Don\'t fly blind. I set up clear dashboards to track your visitors, abandoned carts, and real-time sales.',
+          fr: 'Ce que vos collaborateurs cherchaient en 2 heures se trouve en 10 secondes. L\'IA travaille, vos équipes décident.',
+          en: 'What your teams searched for in 2 hours is found in 10 seconds. AI works, your people decide.',
         },
       },
       {
-        iconName: 'MapPin',
-        title: { fr: 'Adapté aux réalités du marché local', en: 'Tailored to local market realities' },
+        iconName: 'UserCheck',
+        title: { fr: 'Accès contrôlé par authentification', en: 'Access controlled by authentication' },
         description: {
-          fr: 'Gestion optimisée du paiement à la livraison (Cash on Delivery), formulaires simplifiés pour l\'Algérie, et des performances conçues pour charger vite sur réseau mobile.',
-          en: 'Optimized Cash on Delivery (COD) management, simplified forms for Algeria, and performance designed to load fast on mobile networks.',
+          fr: 'Chaque utilisateur se connecte avec ses propres identifiants. Les droits sont définis pour que chacun ne voie que ce qu\'il doit voir.',
+          en: 'Each user logs in with their own credentials. Access rights are defined so each person only sees what they should see.',
         },
       },
     ],
-    ctaLabel: { fr: 'Lancer ma boutique', en: 'Launch my store' },
+    ctaLabel: { fr: 'Planifier une démo', en: 'Schedule a demo' },
   },
 };

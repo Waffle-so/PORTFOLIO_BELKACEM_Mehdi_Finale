@@ -1,39 +1,41 @@
 /* ─────────────────────────────────────────────────────
    HeroSection — Figma "Homepage" frame
-   bg: #252420 | 1300px wide | fixed height 544px on desktop
+   bg: #252420 | 1300px wide
    ───────────────────────────────────────────────────── */
 
 .hero {
   position: relative;
-  /* Agrandi depuis 544px → var(--space-32)*5.3 ≈ 680px */
-  height: 680px;
+  min-height: calc(100vh - var(--nav-height));
   max-width: var(--max-width);
   margin-inline: auto;
-  overflow: hidden;
-  /* Compense le header fixe via le token nav-height */
   margin-top: var(--nav-height);
-  padding: 0 var(--space-12);
-}
-
-/* ────────────────────────────────────────
-   Container restrictif pour s'aligner exactement sur le texte
-   ──────────────────────────────────────── */
-.container {
-  position: relative;
-  width: max-content;
-  height: 100%;
-  margin: 0; /* Aligné à gauche, hérite du padding de .hero */
+  padding: 32px var(--space-12) 48px;
   display: flex;
-  align-items: center; /* Centre le nameBlock verticalement */
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
 }
 
 /* ────────────────────────────────────────
-   Status tags — top-right, aligned with right edge
+   Top Row — status tags aligned right
    ──────────────────────────────────────── */
+.topRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 300px;
+}
+
 .tagCluster {
-  position: absolute;
-  top: 160px; /* Ajusté pour être au-dessus du "DI" de MEHDI */
-  right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -43,32 +45,17 @@
 }
 
 /* ────────────────────────────────────────
-   Name block — center-left
+   Name block — center
    ──────────────────────────────────────── */
 .nameBlock {
-  /* En flux normal pour donner la largeur/hauteur au container */
   display: flex;
   flex-direction: column;
   gap: 0;
   animation: fadeUp 0.8s ease both;
   animation-delay: 0.1s;
+  margin: auto 0;
 }
 
-/* ────────────────────────────────────────
-   Tagline block — bottom-left
-   ──────────────────────────────────────── */
-.taglineBlock {
-  position: absolute;
-  bottom: var(--nav-height);
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  animation: fadeUp 0.8s ease both;
-  animation-delay: 0.15s;
-}
-
-/* "My name is" — DM Serif Display Italic */
 .preTitle {
   font-family: var(--font-display);
   font-style: italic;
@@ -77,29 +64,47 @@
   /* 28px */
   color: var(--color-text-primary);
   opacity: 0.88;
-  margin-bottom: 6px;
+  margin: 0 0 8px 0;
 }
 
-/* "BELKACEM MEHDI" — DM Serif Display, massive */
 .name {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: var(--text-hero);
-  /* 152px */
-  line-height: 0.9;
+  font-size: clamp(48px, 8.8vw, 140px);
+  line-height: 0.92;
   color: var(--color-text-primary);
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  /* Prevent wrapping to perfectly match Figma */
   white-space: nowrap;
-
-
-
-  margin-bottom: var(--space-6);
-  /* 24px */
+  margin: 0;
 }
 
-/* "Built to work…" — Roboto Regular */
+/* ────────────────────────────────────────
+   Bottom Row — Tagline + CTAs on left, location on right
+   ──────────────────────────────────────── */
+.bottomRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.bottomLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 650px;
+}
+
+.taglineBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.15s;
+}
+
 .tagline {
   font-family: var(--font-sans);
   font-weight: 400;
@@ -114,22 +119,71 @@
   color: var(--color-text-primary);
 }
 
+/* ─── Hero CTA Buttons ─── */
+.ctaButtons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.25s;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: #121210;
+  background-color: var(--color-accent-gold, #c5a059);
+  padding: 11px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.25);
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-2px);
+  background-color: #d8b268;
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 11px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.ctaSecondary:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
 /* ────────────────────────────────────────
    "Based in Algeria" — bottom-right
    ──────────────────────────────────────── */
 .location {
-  position: absolute;
-  /* var(--nav-height) = 80px — aligné avec .copy */
-  bottom: var(--nav-height);
-  right: 0;
-
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: var(--text-sm);
   /* 14px */
   color: var(--color-white);
   white-space: nowrap;
-
+  margin: 0;
+  padding-bottom: 8px;
   animation: fadeUp 0.6s ease both;
   animation-delay: 0.4s;
 }
@@ -152,80 +206,64 @@
 }
 
 /* ─── Responsive ─── */
-@media (max-width: 1200px) {
-  .name {
-    font-size: 12vw;
-  }
-}
-
 @media (max-width: 900px) {
   .hero {
-    height: auto;
-    min-height: calc(100svh - 80px);
-    display: flex;
-    flex-direction: column;
-    padding: 60px 24px 48px;
-    gap: 28px;
+    min-height: auto;
+    padding: 32px 24px 40px;
   }
 
   .container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    gap: 28px;
   }
 
-  .tagCluster,
-  .nameBlock,
-  .taglineBlock,
-  .location {
-    position: static;
-    transform: none;
+  .topRow {
+    justify-content: flex-start;
+    top: 0px;
   }
 
   .tagCluster {
     align-items: flex-start;
-    order: -1;
   }
 
   .nameBlock {
-    order: 0;
+    margin: 12px 0;
   }
 
-  .taglineBlock {
-    order: 1;
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
   }
 
   .location {
-    align-self: flex-end;
-    order: 2;
-  }
-
-  .name {
-    white-space: normal;
+    padding-bottom: 0;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 20px 40px;
-    gap: 28px;
-    min-height: auto;
-  }
-
-  .container {
-    width: 100%;
+    padding: 24px 20px 36px;
   }
 
   .preTitle {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .name {
-    font-size: 16vw;
-    line-height: 0.92;
+    font-size: 15vw;
+    line-height: 0.95;
+    white-space: normal;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    text-align: center;
   }
 
   .tagline {
